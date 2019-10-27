@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'DJBILoveaGinger';
+  src: url('DJBILoveaGinger.svg#DJBILoveaGinger') format('svg'),
+       url('DJBILoveaGinger.ttf') format('truetype'),
+       url('DJBILoveaGinger.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DjbILoveAGinger-18XZ';
+  src: url('DjbILoveAGinger-18XZ.eot');
+  src: url('DjbILoveAGinger-18XZ.eot?#iefix') format('embedded-opentype'),
+       url('DjbILoveAGinger-18XZ.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+

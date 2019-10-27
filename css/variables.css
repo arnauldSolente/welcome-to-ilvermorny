@@ -1,0 +1,39 @@
+:root {
+    --header-bg-color: rgb(78,26,15);
+    --header-title-color: #FFA71B;
+    --main-bg-color: rgb(82,25,15);
+    --hero-bg-color: #8B2A17;
+}
+
+@font-face{
+    font-family: "Harry";
+    src: url('../ressources/fonts/Harry/MagicSchoolOne.svg#MagicSchoolOne')     format('svg'),
+        
+       url('../ressources/fonts/Harry/MagicSchoolOne.ttf') format('truetype'),
+    
+       url('../ressources/fonts/Harry/MagicSchoolOne.woff')
+       format('woff'),
+        
+       url('../ressources/fonts/Harry/MagicSchoolOne[1].eot') format('embedded-opentype'),
+        
+       url('../ressources/fonts/Harry/MagicSchoolOne[1].woff2') format('woff2');
+    
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+    font-family:"Ginger";
+    src:url('../ressources/fonts/Ginger/DJBILoveaGinger.svg#DJBILoveaGinger') format('svg'),
+        
+       url('../ressources/fonts/Ginger/DJBILoveaGinger.ttf') format('truetype'),
+        
+       url('../ressources/fonts/Ginger/DJBILoveaGinger.woff') format('woff'),
+        
+       url('../ressources/fonts/Ginger/DjbILoveAGinger-18XZ.eot?#iefix') format('embedded-opentype'),
+        
+       url('../ressources/fonts/Ginger/DjbILoveAGinger-18XZ.woff2') format('woff2');
+    
+    font-weight: bold;
+    font-style: normal;
+}

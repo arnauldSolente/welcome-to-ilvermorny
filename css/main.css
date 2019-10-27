@@ -1,0 +1,35 @@
+*{
+    padding: 0px;
+    margin: 0px;       
+}
+
+body{
+    background: var(--main-bg-color);
+}
+
+header{
+    background: linear-gradient(var(--header-bg-color) 93%, #000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1{
+    font-family: "Harry";
+    font-size: 10vh;
+    color: var(--header-title-color);
+    text-shadow: 5px 5px black;
+}
+
+div#main{
+    background: var(--main-bg-color);
+}
+
+.hero{
+    height: 20vh;
+    background: var(--hero-bg-color);
+    margin:3vh auto;
+    box-shadow: 3px 3px black;
+    display: block;
+    width: 95vw;
+}
