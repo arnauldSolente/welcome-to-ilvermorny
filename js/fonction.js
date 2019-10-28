@@ -125,6 +125,6 @@ function setupBackground(){
             }
             
         }, etoile.frame)
-    }, 100)
+    }, 1000)
 }
 
