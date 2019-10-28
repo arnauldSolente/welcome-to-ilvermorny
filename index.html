@@ -8,13 +8,35 @@
         <!-- CSS -->
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" media="(max-width:600px)" href="css/600.css">
+        <link rel="stylesheet" media="(max-width:665px)" href="css/665.css">
+    
+        <!-- JS -->
+        <script src="ressources/jquery/j-query-3.4.1.min.js"></script>
+        <script src="js/tb_de_bord.js"></script>
+        <script src="js/fonction.js"></script>
+        <script src="js/setup.js"></script>
+        <script src="js/resize.js"></script>
     </head>
     <body>
         <header><h1>Welcome to Ilvermorny</h1></header>
         <div id="main">
-            <div class="hero"></div>
-            <div class="hero"></div>
+            
+            <div id="background">
+                <canvas id="fx"></canvas>
+            </div>
+            
+            <div id="espace-top"></div>
+            
+            <div id="jean" class="hero">
+                <div class="rectangle"></div>
+                <canvas class="triangle"></canvas>
+            </div>
+            
+            <div id="mechant" class="hero">
+                <div class="rectangle"></div>
+                <canvas class="triangle"></canvas>
+            </div>
+            
         </div>
     </body>
 </html>

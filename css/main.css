@@ -19,17 +19,53 @@ header h1{
     font-size: 10vh;
     color: var(--header-title-color);
     text-shadow: 5px 5px black;
+    letter-spacing: 3px;
 }
 
 div#main{
     background: var(--main-bg-color);
+    position: relative;
+}
+
+div#espace-top{
+    width: 100%;
+    height: 3vh;
+}
+
+div#background{
+    position: absolute;
+    width: 100%;
 }
 
 .hero{
     height: 20vh;
+    margin:0 auto;
+    width: 95%;
+    position: relative;
+}
+
+.hero#mechant{
+    top: -3vh;
+}
+
+.hero .rectangle{
     background: var(--hero-bg-color);
-    margin:3vh auto;
-    box-shadow: 3px 3px black;
-    display: block;
-    width: 95vw;
+    width: 47%;
+    height: 100%;
+}
+
+.hero#jean .rectangle{
+    float: left;
+    border-top-left-radius: 0.5vh;
+    border-bottom-left-radius: 0.5vh;
+}
+
+.hero#mechant .rectangle{
+    float: right;
+    border-top-right-radius: 0.5vh;
+    border-bottom-right-radius: 0.5vh;
+}
+
+.hero#mechant canvas{
+    float: right;
 }
