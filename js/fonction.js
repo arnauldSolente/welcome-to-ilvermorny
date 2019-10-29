@@ -39,7 +39,7 @@ function drawTriangleCanvas (){
     ctx.fill();
 }
 
-function drawBordureCanvas(elem_parent){
+function drawBordureCanvas(elem_parent, clicked=false){
     
     const canvas = elem_parent.children("canvas.bordure");
     const rectangle = elem_parent.children("div.foreground").children(".rectangle");
@@ -51,17 +51,17 @@ function drawBordureCanvas(elem_parent){
     });
     
     const ctx = canvas[0].getContext("2d");
-    
+    ctx.clearRect(0, 0, canvas.width(), canvas.height());
     if(elem_parent.attr("id") === "jean"){
         ctx.beginPath();
         ctx.moveTo(rectangle.width(), 0);
         ctx.lineTo(rectangle.width(), rectangle.height());
         ctx.lineTo(rectangle.width() + triangl.width(), 0);
         ctx.lineTo(rectangle.width(), 0);
-        ctx.fillStyle = triangle.borderColor;
+        ctx.fillStyle = (clicked) ? triangle.borderColorClicked : triangle.borderColor;
         ctx.fill();
         
-        ctx.fillStyle = triangle.borderColor;
+        ctx.fillStyle = (clicked) ? triangle.borderColorClicked : triangle.borderColor;
         ctx.fillRect(0, 0, rectangle.width() + 1, rectangle.height());
     }
     else if(elem_parent.attr("id") === "mechant"){
@@ -70,10 +70,10 @@ function drawBordureCanvas(elem_parent){
         ctx.lineTo(triangl.width(), triangl.height());
         ctx.lineTo(0, triangl.height());
         ctx.lineTo(triangl.width(), 0);
-        ctx.fillStyle = triangle.borderColor;
+        ctx.fillStyle = (clicked) ? triangle.borderColorClicked : triangle.borderColor
         ctx.fill();
         
-        ctx.fillStyle = triangle.borderColor;
+        ctx.fillStyle =  (clicked) ? triangle.borderColorClicked : triangle.borderColor;
         ctx.fillRect(triangl.width(), 0, rectangle.width() + 1, rectangle.height());
     }
 }
@@ -87,6 +87,25 @@ function reloadBackground(){
         width: $("#background").width(),
         height: $("#background").height()
     });
+}
+
+function restartBackground(frame=etoile.frame, spawn=etoile.spawn, color=etoile.color){
+    
+    
+    if(etoile.usine !== etoile.last_usine_id){//pour eviter les bug
+        clearInterval(etoile.usine)
+        etoile.last_usine_id = etoile.usine;
+        setupBackground(frame,spawn, color);
+    }
+    else{
+        setTimeout(()=>{
+            restartBackground(frame, spawn, color);
+        }, 100)
+        
+    }
+    
+    
+    
 }
 
 
@@ -103,7 +122,7 @@ function createStar(){
 }
 
 
-function setupBackground(){
+function setupBackground(frame=etoile.frame, spawn=etoile.spawn, color= etoile.color){
     setTimeout(()=>{
                 
         $("#fx").attr({
@@ -112,24 +131,23 @@ function setupBackground(){
         });
         
         const ctx = $("#fx")[0].getContext("2d");
-        const liste_etoile = [];
-        const usine_a_etoile = setInterval(()=>{
+        etoile.usine = setInterval(()=>{
              
-            if(Math.random() <= etoile.spawn){
-                liste_etoile.push(createStar());
+            if(Math.random() <= spawn){
+                etoile.registre.push(createStar());
             }
             
             ctx.clearRect(0, 0, $("#fx").width(), $("#fx").height());
             
-            for(let eto in liste_etoile){
-                const etoil = liste_etoile[eto];
-                ctx.fillStyle = etoile.color;
+            for(let eto in etoile.registre){
+                const etoil = etoile.registre[eto];
+                ctx.fillStyle = color;
                 ctx.fillRect(parseInt(etoil.x - etoil.width/2), parseInt(etoil.y - etoil.height/2), etoil.width, etoil.height);
                 
                 etoil.y -= etoil.v;
                 
                 if(etoil.y < -parseInt(etoil.height/2)){
-                   liste_etoile.splice(eto, 1);
+                   etoile.registre.splice(eto, 1);
                 }
                 else{
                     
@@ -178,8 +196,7 @@ function setupBackground(){
                 }
                 
             }
-            
-        }, etoile.frame)
+        }, frame)
     }, 100)
 }
 

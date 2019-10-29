@@ -1,4 +1,4 @@
-console.log(triangle);
+
 function hoverTriangle(element, mode){
     
     const other = $(".hero");
@@ -37,3 +37,18 @@ function hoverTriangle(element, mode){
     drawTriangleCanvas();
 }
 
+function changeColor(color){
+    $("#titre").css({color: color});
+    $(".hero").children().children(".rectangle").children().children().css("color", color);
+    $("#disco").css("color", color);
+}
+
+function allOrange(){
+    restartBackground(etoile.frame_fast, etoile.spawn_fast, etoile.color_fast);
+    changeColor(etoile.color_fast)
+}
+
+function allYellow(){
+    restartBackground();
+    changeColor(etoile.color);
+}
