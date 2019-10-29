@@ -62,7 +62,6 @@ function drawBordureCanvas(elem_parent){
         ctx.fill();
         
         ctx.fillStyle = triangle.borderColor;
-        console.log(canvas.height())
         ctx.fillRect(0, 0, rectangle.width() + 1, rectangle.height());
     }
     else if(elem_parent.attr("id") === "mechant"){
@@ -75,7 +74,6 @@ function drawBordureCanvas(elem_parent){
         ctx.fill();
         
         ctx.fillStyle = triangle.borderColor;
-        console.log(canvas.height())
         ctx.fillRect(triangl.width(), 0, rectangle.width() + 1, rectangle.height());
     }
 }
