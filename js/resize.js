@@ -2,8 +2,9 @@ $(document).ready(()=>{
     
     $(window).resize(()=>{
         
-        drawTriangleCanvas();
+        drawTriangleCanvas(); 
         
+        reloadBackground();
     })
     
 })

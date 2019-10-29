@@ -9,3 +9,10 @@ const etoile = {
     spawn: 0.08, //les chances de spawn a chaque frame
     frame: 50
 }
+
+const triangle = {
+    width: 0.1,
+    height: 1, //pourcentage,
+    borderSize: 0.05,//pourcentag
+    borderColor: "black"// milliseconde
+}
