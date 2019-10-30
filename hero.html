@@ -89,6 +89,13 @@
                 drawBordureCanvas($('.arrow-back'), "bas");
             })
             
+            $(window).resize(()=>{
+                drawBordureCanvas($('header'), "haut");
+                drawBordureCanvas($('.arrow-back'), "bas");
+                
+                reloadBackground();
+            })
+            
         })
     </script>
 </html>
