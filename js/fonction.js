@@ -39,11 +39,11 @@ function drawTriangleCanvas (){
     ctx.fill();
 }
 
-function drawBordureCanvas(elem_parent, clicked=false){
+function drawBordureCanvas(elem_parent, sens="", clicked=false){
     
     const canvas = elem_parent.children("canvas.bordure");
     const rectangle = elem_parent.children("div.foreground").children(".rectangle");
-    const triangl = elem_parent.children("div.foreground").children("canvas.triangle");
+    const triangl = elem_parent.children("div.foreground").children(".triangle");
     
     canvas.attr({
         width: elem_parent.width() ,
@@ -76,6 +76,33 @@ function drawBordureCanvas(elem_parent, clicked=false){
         ctx.fillStyle =  (clicked) ? triangle.borderColorClicked : triangle.borderColor;
         ctx.fillRect(triangl.width(), 0, rectangle.width() + 1, rectangle.height());
     }
+    else if(sens === "haut"){
+        ctx.beginPath();
+        console.log(parseInt(triangl.css("border-right")))
+        ctx.moveTo(rectangle.width(), 0);
+        ctx.lineTo(rectangle.width(), rectangle.height());
+        ctx.lineTo(rectangle.width() + parseInt(triangl.css("border-right")), 0);
+        ctx.lineTo(rectangle.width(), 0);
+        ctx.fillStyle = (clicked) ? triangle.borderColorClicked : triangle.borderColor;
+        ctx.fill();
+        
+        ctx.fillStyle = (clicked) ? triangle.borderColorClicked : triangle.borderColor;
+        ctx.fillRect(0, 0, rectangle.width() + 1, rectangle.height());
+    }
+    else if (sens === "bas"){
+        ctx.beginPath();
+        console.log("alalal")
+        console.log(parseInt(triangl.css("border-left")))
+        ctx.moveTo(parseInt(triangl.css("border-left")), 0);
+        ctx.lineTo(parseInt(triangl.css("border-left")), rectangle.height());
+        ctx.lineTo( 0, rectangle.height());
+        ctx.lineTo(parseInt(triangl.css("border-left")), 0);
+        ctx.fillStyle = (clicked) ? triangle.borderColorClicked : triangle.borderColor;
+        ctx.fill();
+        
+        ctx.fillStyle = (clicked) ? triangle.borderColorClicked : triangle.borderColor;
+        ctx.fillRect(parseInt(triangl.css("border-left")) - 1, 0, rectangle.width(), rectangle.height());
+    }
 }
 
 function reloadBackground(){
@@ -89,18 +116,18 @@ function reloadBackground(){
     });
 }
 
-function restartBackground(frame=etoile.frame, spawn=etoile.spawn, color=etoile.color){
+function restartBackground(frame=etoile.frame, spawn=etoile.spawn){
     
     
     if(etoile.usine !== etoile.last_usine_id){//pour eviter les bug
         clearInterval(etoile.usine)
         etoile.last_usine_id = etoile.usine;
-        setupBackground(frame,spawn, color);
+        setupBackground(frame,spawn);
     }
     else{
         setTimeout(()=>{
-            restartBackground(frame, spawn, color);
-        }, 100)
+            restartBackground(frame, spawn);
+        }, 50)
         
     }
     
@@ -122,7 +149,7 @@ function createStar(){
 }
 
 
-function setupBackground(frame=etoile.frame, spawn=etoile.spawn, color= etoile.color){
+function setupBackground(frame=etoile.frame, spawn=etoile.spawn){
     setTimeout(()=>{
                 
         $("#fx").attr({
@@ -141,7 +168,7 @@ function setupBackground(frame=etoile.frame, spawn=etoile.spawn, color= etoile.c
             
             for(let eto in etoile.registre){
                 const etoil = etoile.registre[eto];
-                ctx.fillStyle = color;
+                ctx.fillStyle = etoile.color;
                 ctx.fillRect(parseInt(etoil.x - etoil.width/2), parseInt(etoil.y - etoil.height/2), etoil.width, etoil.height);
                 
                 etoil.y -= etoil.v;

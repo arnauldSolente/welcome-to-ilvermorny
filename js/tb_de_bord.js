@@ -6,11 +6,12 @@ const etoile = {
     v_min: 2, //vitesse minimum
     v_max: 4, //vitesse max
     color: "#FFA71B",
+    color_slow: "#FFA71B",
     color_fast: "#FF7414",
     spawn: 0.08, //les chances de spawn a chaque frame
-    spawn_fast: 0.16,
+    spawn_fast: 0.22,
     frame: 50,
-    frame_fast:10,
+    frame_fast:5,
     usine: null,
     last_usine_id: 0,
     registre: []

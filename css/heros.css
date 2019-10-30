@@ -6,3 +6,121 @@
 body{
     background: var(--main-bg-color);
 }
+
+div#background{
+    position: absolute;
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+    z-index: -100;
+}
+
+header{
+    height: 11vh;
+    width: 50vw;
+}
+
+header h1{
+    font-family: "Harry";
+    font-size: 8vh;
+    margin-left: 2vw;
+    color: var(--header-title-color);
+}
+
+header .bordure{
+    position: relative;
+}
+
+header #ombre_titre{
+    top: 4vh;
+    left: 0.5vh;
+}
+
+header div.foreground{
+    position: absolute;
+    display: flex;
+    top: 0;
+    width: 100%;
+}
+
+header div.rectangle{
+    width: 40vw;
+    height: 100%;
+    background: var(--header-bg-color);
+}
+
+header .triangle{
+    width:0;
+    height: 0;
+    border-top: 12vh solid var(--header-bg-color);
+    border-right: 10vw solid transparent;
+}
+
+div.text-container{
+    border-radius: 2vw;
+    margin-top: 2vh;
+    background: var(--header-bg-color);
+}
+
+#p1{
+    width: 50vw;
+    height: 25vw;
+    margin-top: 5vh;
+    margin-left: 5vw;
+}
+
+#p2{
+    width: 30vw;
+    height: 30vw;
+    margin-left: 50vw;
+}
+
+div.arrow-back{
+    position: fixed;
+    top: 100vh; left: 100vw;
+    transform: translate(-100%, -100%);
+    width: 12vw;
+    height: 7vh;
+}
+
+div.arrow-back .foreground{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+}
+
+div.arrow-back .rectangle {
+    width: 100%;
+    height: 100%;
+    background: var(--header-bg-color);
+    cursor: pointer;    
+}
+
+div.arrow-back .triangle {
+    width: 0;
+    height: 0;
+    border-bottom: 7vh solid var(--header-bg-color);
+    border-left: 4vw solid transparent;
+}
+
+div.arrow-back .bordure{
+    position: relative;
+    top: -0.5vh;
+    left: -1vh;
+}
+
+div.arrow-back a{
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.arrow-back a p{
+    color: var(--header-title-color);
+    font-size: 4vh;
+    font-family: "Harry";
+}

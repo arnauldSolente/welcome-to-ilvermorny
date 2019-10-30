@@ -43,12 +43,28 @@ function changeColor(color){
     $("#disco").css("color", color);
 }
 
+function batement(element, duree){
+    return new Promise((resolve, reject)=>{
+        const sauvegarde = element.css('font-size');
+        element.css("font-size",parseInt(element.css('font-size')) * 1.25 +"px");
+        setTimeout(()=>{
+            element.css("font-size", sauvegarde);
+            resolve(true);
+        }, duree)    
+    })
+     
+        
+}
+
 function allOrange(){
-    restartBackground(etoile.frame_fast, etoile.spawn_fast, etoile.color_fast);
+    etoile.color = etoile.color_fast;
+    restartBackground(etoile.frame_fast, etoile.spawn_fast);
     changeColor(etoile.color_fast)
+     
 }
 
 function allYellow(){
+    etoile.color = etoile.color_slow;
     restartBackground();
     changeColor(etoile.color);
 }

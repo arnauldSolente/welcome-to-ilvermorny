@@ -18,6 +18,77 @@
         <script src="js/animf.js"></script>
     </head>
     <body>
-        okkopjpjz
+        <div id="background">
+                <canvas id="fx"></canvas>
+        </div>
+        <header>
+            <canvas class="bordure" id="ombre_titre"></canvas>
+            <div class="foreground">
+                <div class="rectangle">
+                    <h1>Mechant</h1>
+                </div>
+                <div class="triangle"></div>
+            </div>
+        </header>
+        
+        <div class="text-container" id="p1">
+            TEXT
+        </div>
+        
+        <div class="text-container" id="p2">
+            TEXT
+        </div>
+        
+        <div class="arrow-back">
+            <canvas class="bordure" ></canvas>
+            <div class="foreground">
+                <div class='triangle' id="tr_bas"></div>
+                <div class="rectangle">
+                    <a href="index.html">
+                        <p id="p_back">Back</p>
+                    </a>
+                </div>
+            </div>
+        </div>
     </body>
+    <script>
+        $(document).ready(function(){
+            console.log(etoile);
+            setupBackground();
+            
+            drawBordureCanvas($('header'), "haut");
+            drawBordureCanvas($('.arrow-back'), "bas");
+            
+            $(".arrow-back").mouseover(function(){
+                $(".arrow-back").css({
+                    width: "15vw",
+                    height: "9vh"
+                });
+                
+                $('#tr_bas').css({
+                    borderBottom: "9vh solid var(--header-bg-color)",
+                    borderLeft: "6vw solid transparent",
+                })
+                
+                $("#p_back").css("font-size", "6vh");
+                
+                drawBordureCanvas($('.arrow-back'), "bas");
+            }).mouseout(function(){
+                $(".arrow-back").css({
+                    width: "12vw",
+                    height: "7vh"
+                });
+                
+                $('#tr_bas').css({
+                    borderBottom: "7vh solid var(--header-bg-color)",
+                    borderLeft: "4vw solid transparent",
+                })
+                
+                $("#p_back").css("font-size", "4vh");
+                
+                drawBordureCanvas($('.arrow-back'), "bas");
+            })
+            
+        })
+    </script>
 </html>

@@ -16,53 +16,98 @@
         <script src="js/tb_de_bord.js"></script>
         <script src="js/fonction.js"></script>
         <script src="js/animf.js"></script>
-        <script src="js/anim.js"></script>
     </head>
     <body id="main">
-        <header><h1>Welcome to a bewitch Far West</h1></header>
+        <header><h1 id="titre">Welcome to a bewitch Far West</h1></header>
         <div id="main">
             
             <div id="background">
                 <canvas id="fx"></canvas>
             </div>
             
-            <div id="espace-top"></div>
-            
-            <div id="jean" class="hero">
-                <canvas class="bordure"></canvas>
-                <div class="foreground">
-                    <div class="rectangle">
-                        <a href="hero.html"><p>Jean</p></a>
+            <div id="foreforeground">
+                <div id="espace-top"></div>
+
+                <div id='espace-hero'>
+                    <div id="jean" class="hero">
+                        <canvas class="bordure"></canvas>
+                        <div class="foreground">
+                            <div class="rectangle">
+                                <a class="hero-link" href="hero.html"><p>Jean</p></a>
+                            </div>
+                            <canvas class="triangle"></canvas>
+                        </div>
                     </div>
-                    <canvas class="triangle"></canvas>
+
+                    <div id="mechant" class="hero">
+                        <canvas class="bordure"></canvas>
+                        <div class="foreground">
+                            <div class="rectangle">
+                                <a class="hero-link" href="mechant.html"><p>Mechant</p></a>
+                            </div>
+                            <canvas class="triangle"></canvas>
+                        </div>
+
+                    </div>
                 </div>
-            </div>
-            
-            <div id="mechant" class="hero">
-                <canvas class="bordure"></canvas>
-                <div class="foreground">
-                    <div class="rectangle">
-                        <a href="hero.html"><p>Mechant</p></a>
-                    </div>
-                    <canvas class="triangle"></canvas>
+                <div class="separeur">
+                    <h2 id="disco">Discover the story</h2>
+                </div>
+                <div class="separeur">
+                    <div id="button"></div>
                 </div>
                 
+                
             </div>
-            
         </div>
         
         <script>
             $(document).ready(()=>{
                 
+                //setup -----
                 drawTriangleCanvas();
     
                 setupBackground();
+                //------
                 
                 $(window).resize(()=>{
 
                     drawTriangleCanvas(); 
 
                     reloadBackground();
+                })
+                
+                
+                $(".hero").mouseover(function(){
+                    hoverTriangle($(this), "enter");
+                    if($(this).attr('id') === "jean"){
+                        changeColor("#153F8D");
+                        etoile.color = "#153F8D"
+                    }
+                    else{
+                        changeColor("#7E158D");
+                        etoile.color = "#7E158D";
+                    }
+                    
+                }).mouseout(function(){
+                    hoverTriangle($(this),"exit");
+                    etoile.color = etoile.color_slow;
+                    changeColor(etoile.color_slow);
+                })
+                
+                $(".hero").click(function(){
+                    drawBordureCanvas($(this), true)
+                })
+                
+                let batements = true;
+                
+                $("div#button").mouseenter(function(){
+                    allOrange();
+                    $("#disco").css("font-size","9vh"); 
+                }).mouseleave(function(){
+                    allYellow();
+                    $("#disco").css("font-size","8vh");
+
                 })
 
             })
