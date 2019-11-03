@@ -83,6 +83,7 @@ div#espace-hero{
     background: var(--hero-bg-color);
     width: 89%;
     height: 100%;
+    position: relative;
 }
 
 .hero a{
@@ -92,12 +93,19 @@ div#espace-hero{
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 10;
 }
 
 .hero a p{
     color: var(--header-title-color);
     font-family: "Harry";
     font-size: 5vw;
+    position: relative
+}
+
+.hero .rectangle img{
+    position: absolute;
+    height: 100%;
 }
 
 .hero canvas.bordure{

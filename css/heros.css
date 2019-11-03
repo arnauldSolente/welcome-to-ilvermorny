@@ -58,7 +58,7 @@ header .triangle{
 div.text-container{
     border-radius: 2vw;
     margin-top: 2vh;
-    background: var(--header-bg-color);
+    background: var(--hero-bg-color);
 }
 
 #p1{
@@ -70,7 +70,7 @@ div.text-container{
 
 #p2{
     width: 30vw;
-    height: 30vw;
+    height: 30vH;
     margin-left: 50vw;
 }
 
@@ -98,6 +98,7 @@ div.arrow-back .rectangle {
 }
 
 div.arrow-back .triangle {
+    position: relative; left: 1px;
     width: 0;
     height: 0;
     border-bottom: 7vh solid var(--header-bg-color);
@@ -121,6 +122,6 @@ div.arrow-back a{
 
 div.arrow-back a p{
     color: var(--header-title-color);
-    font-size: 4vh;
+    font-size: 5vw;
     font-family: "Harry";
 }

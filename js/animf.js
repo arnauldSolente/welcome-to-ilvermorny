@@ -10,6 +10,8 @@ function hoverTriangle(element, mode){
             width: "55%"
         });
         
+        element.find("p").css("font-size", "9vw");
+        
         other.css({
             height:"18vh",
             width: "45%"
@@ -23,6 +25,7 @@ function hoverTriangle(element, mode){
             width: "50%"
         });
         
+        element.find("p").css("font-size", other.find("p").css("font-size"));
         
         other.css({
             height:"20vh",
@@ -63,8 +66,7 @@ function allOrange(){
      
 }
 
-function allYellow(){
-    etoile.color = etoile.color_slow;
+function allWhite(){;
     restartBackground();
-    changeColor(etoile.color);
+    changeColor("#fff");
 }
