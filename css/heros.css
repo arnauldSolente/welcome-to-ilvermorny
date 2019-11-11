@@ -61,12 +61,16 @@ div.text-container{
     background: var(--hero-bg-color);
 }
 
-#p1{
-    width: 50vw;
-    height: 25vw;
+#p1 {
+    width: 60vw;
+    height: 30vw;
     margin-top: 5vh;
     margin-left: 5vw;
+    font-family: "Ginger";
+    color:white;
+    font-size: 2vw;
 }
+
 
 #p2{
     width: 30vw;
@@ -124,4 +128,41 @@ div.arrow-back a p{
     color: var(--header-title-color);
     font-size: 5vw;
     font-family: "Harry";
+}
+
+#t1{
+    height: 45vh;
+    display: flex;
+    justify-content: flex-start;
+    width: 60vw;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ .colonne .month{
+    border-bottom: 1px solid white;
+}
+
+ .colonne .place{
+    border-bottom: 1px solid white;
+}
+
+ .colonne p{
+    border-right: 1px solid white;
+    font-family: "Ginger";
+    font-size 2vh;
+    color: white;
+}
+
+.colonne .range.month{
+    height: 20%;
+}
+
+.colonne .range.place{
+    height: 20%;
+}
+
+.colonne .range.objectif{
+    height: 58%;
 }

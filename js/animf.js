@@ -44,6 +44,7 @@ function changeColor(color){
     $("#titre").css({color: color});
     $(".hero").children().children(".rectangle").children().children().css("color", color);
     $("#disco").css("color", color);
+    $('#button').children().children("p").css("color", color);
 }
 
 function batement(element, duree){
