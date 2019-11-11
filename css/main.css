@@ -99,7 +99,7 @@ div#espace-hero{
 .hero a p{
     color: var(--header-title-color);
     font-family: "Harry";
-    font-size: 5vw;
+    font-size: 4vw;
     position: relative
 }
 

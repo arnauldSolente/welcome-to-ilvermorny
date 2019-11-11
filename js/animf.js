@@ -10,7 +10,7 @@ function hoverTriangle(element, mode){
             width: "55%"
         });
         
-        element.find("p").css("font-size", "9vw");
+        element.find("p").css("font-size", "8vw");
         
         other.css({
             height:"18vh",
