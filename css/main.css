@@ -25,6 +25,15 @@ header h1{
     color: var(--header-title-color);
     text-shadow: 5px 5px black;
     letter-spacing: 3px;
+} 
+
+header h1 a {
+    font-family: "Harry";
+    font-size: 10vh;
+    color: var(--header-title-color);
+    text-shadow: 5px 5px black;
+    letter-spacing: 3px;
+    text-decoration: none;
 }
 
 
