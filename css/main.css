@@ -179,7 +179,7 @@ h2{
 div#button{
     border:none;
     width: 10vw;
-    height: 5vh;
+    height: 6vh;
     background: var(--hero-bg-color);
     border-radius: 0.5vh;
     margin: 0 auto;
